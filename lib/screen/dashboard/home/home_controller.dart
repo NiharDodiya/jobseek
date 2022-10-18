@@ -33,6 +33,8 @@ class HomeController extends GetxController implements GetxService {
     }
   }
 
+  RxList allJob = [].obs;
+
   // RxInt selectedJobs = 0.obs;
   // RxList jobs = ["All Job", "Writer", "Design", "Finance"].obs;
   // onTapJobs(int index){

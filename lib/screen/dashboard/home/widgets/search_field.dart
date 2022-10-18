@@ -1,11 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:jobseek/screen/dashboard/home/home_controller.dart';
+import 'package:jobseek/screen/job_recommendation_screen/job_recommendation_controller.dart';
 import 'package:jobseek/utils/app_style.dart';
 import 'package:jobseek/utils/color_res.dart';
 
 Widget searchArea() {
   final HomeController controller = HomeController();
   return Padding(
+
     padding: const EdgeInsets.symmetric(horizontal: 18),
     child: Row(
       children: [
@@ -16,6 +19,15 @@ Widget searchArea() {
                 borderRadius: BorderRadius.all(Radius.circular(15))),
             child: TextField(
               controller: controller.searchController,
+              onChanged: (val){
+
+                controller.allJob.where((e) {
+                  return e.name
+                      .toString()
+                      .toLowerCase()
+                      .contains(val.toString().toLowerCase());
+                }) ?? [];
+                },
               decoration: InputDecoration(
                   border: InputBorder.none,
                   suffixIcon: const Icon(Icons.search, color: ColorRes.grey),

@@ -15,6 +15,7 @@ Widget allJobs(Stream stream){
       stream: stream,
       builder: (BuildContext context,
           AsyncSnapshot<dynamic> snapshot) {
+
         return snapshot.hasData
             ? ListView.builder(
             itemCount: snapshot.data.docs.length,
