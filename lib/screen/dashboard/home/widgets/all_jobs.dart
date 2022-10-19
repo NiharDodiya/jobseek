@@ -1,8 +1,8 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:jobseek/screen/dashboard/home/home_controller.dart';
-import 'package:jobseek/screen/job_recommendation_screen/job_recommendation_controller.dart';
 import 'package:jobseek/utils/app_res.dart';
 import 'package:jobseek/utils/app_style.dart';
 import 'package:jobseek/utils/asset_res.dart';
