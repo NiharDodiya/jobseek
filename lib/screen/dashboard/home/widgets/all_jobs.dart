@@ -61,7 +61,8 @@ Widget allJobs(Stream stream){
                       arguments: {
                         "saved": controller
                             .jobTypesSaved[index % 5],
-                        "docId": snapshot.data!.docs[index].id
+                        "docId": snapshot.data!.docs[index].id,
+                        "doc":snapshot.data!.docs[index],
                       }),
 
                   child: Container(
