@@ -1,3 +1,4 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
 import 'package:jobseek/utils/asset_res.dart';
@@ -31,6 +32,12 @@ class JobRecommendationController extends GetxController
     }
   }
 
+  Stream? allJob;
+  CollectionReference allNoteCollection =
+  FirebaseFirestore.instance.collection('allPost');
+  List<DocumentSnapshot> documents = [];
+  List<DocumentSnapshot> documents1 = [];
+  RxString searchText = ''.obs;
 
   // RxInt selectedJobs = 0.obs;
   // RxList jobs = ["All Job", "Writer", "Design", "Finance"].obs;
