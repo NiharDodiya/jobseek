@@ -159,6 +159,7 @@ class HomeScreen extends StatelessWidget {
                   ),
 
                   Obx(() => controller.selectedJobs2.value == 0
+                      //?allJobs2()
                       ? allJobs(fireStore.collection("allPost") .snapshots())
                       : controller.selectedJobs2.value == 1
                           ? allJobs(fireStore.collection("category").doc("Writer").collection("Writer").snapshots(),)
