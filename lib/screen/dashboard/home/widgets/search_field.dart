@@ -30,6 +30,7 @@ Widget searchArea() {
               onChanged: (value) {
 
                 jrController.searchText.value = value;
+                jrController.update(["search"]);
 
               },
               /*onChanged: (val){

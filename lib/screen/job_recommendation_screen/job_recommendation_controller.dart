@@ -33,10 +33,9 @@ class JobRecommendationController extends GetxController
   }
 
   Stream? allJob;
-  CollectionReference allNoteCollection =
-  FirebaseFirestore.instance.collection('allPost');
+  CollectionReference allNoteCollection = FirebaseFirestore.instance.collection('allPost');
   List<DocumentSnapshot> documents = [];
-  List<DocumentSnapshot> documents1 = [];
+
   RxString searchText = ''.obs;
 
   // RxInt selectedJobs = 0.obs;
