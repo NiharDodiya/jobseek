@@ -18,6 +18,14 @@ Widget allJobs(Stream stream){
         stream: stream,
         builder: (BuildContext context, AsyncSnapshot<dynamic> snapshot) {
 
+          if (snapshot.connectionState ==
+              ConnectionState.waiting) {
+            return const Center(
+                child: CircularProgressIndicator(
+
+                ));
+          }
+
           jrController.documents = snapshot.data.docs;
 
           if (jrController.searchText.value.isNotEmpty) {
@@ -33,6 +41,7 @@ Widget allJobs(Stream stream){
             }).toList();
 
           }
+
 
           return snapshot.hasData
               ? ListView.builder(
