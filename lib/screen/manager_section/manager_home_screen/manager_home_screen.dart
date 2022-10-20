@@ -1,3 +1,4 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:jobseek/screen/dashboard/home/widgets/search_field.dart';
@@ -12,6 +13,8 @@ import 'package:jobseek/utils/color_res.dart';
 class ManagerHomeScreen extends StatelessWidget {
   ManagerHomeScreen({Key? key}) : super(key: key);
   final controller = Get.put(ManagerHomeScreenController());
+
+  FirebaseFirestore fireStore = FirebaseFirestore.instance;
 
   @override
   Widget build(BuildContext context) {
@@ -233,6 +236,21 @@ class ManagerHomeScreen extends StatelessWidget {
         Padding(
           padding: const EdgeInsets.symmetric(horizontal: 20),
           child: recentPeopleBox(),
+          /*StreamBuilder(
+            stream: fireStore.collection("Apply").snapshots(),
+              builder: (BuildContext context, AsyncSnapshot<dynamic> snapshot){
+
+            return snapshot.hasData
+                ?
+            ListView.builder(
+                 itemCount:  snapshot.data.length,
+                itemBuilder: (context, index){
+                   return recentPeopleBox(args: snapshot.data[index]);
+                })
+                : const Center(
+              child:  CircularProgressIndicator(),
+            );
+          })*/
         )
       ],
     );

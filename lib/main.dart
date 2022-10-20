@@ -90,7 +90,7 @@ class MyApp extends StatelessWidget {
             page: () => const FirstPageScreenM()),
         GetPage(
             name: AppRes.seeDetailsScreen,
-            page: () => const SeeDetailsScreen()),
+            page: () =>  SeeDetailsScreen()),
         GetPage(name: AppRes.firstScreen, page: () => FirstScreen()),
       ],
     );

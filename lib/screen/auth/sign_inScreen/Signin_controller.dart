@@ -108,6 +108,14 @@ class SignInScreenController extends GetxController {
               print("$isUser====]]]]]");
             }
 
+            PrefService.setValue(PrefKeys.fullName, value.docs[i]["fullName"]);
+            PrefService.setValue(PrefKeys.email, value.docs[i]["Email"]);
+            PrefService.setValue(PrefKeys.phoneNumber, value.docs[i]["Phone"]);
+            PrefService.setValue(PrefKeys.city, value.docs[i]["City"]);
+            PrefService.setValue(PrefKeys.state, value.docs[i]["State"]);
+            PrefService.setValue(PrefKeys.country, value.docs[i]["Country"]);
+            PrefService.setValue(PrefKeys.occupation, value.docs[i]["Occupation"]);
+
             break;
           } else {
             isUser = false;
@@ -267,6 +275,7 @@ class SignInScreenController extends GetxController {
               isUser = true;
               PrefService.setValue(PrefKeys.rol, "User");
               PrefService.setValue(PrefKeys.accessToken, user.uid);
+
               Get.offAll(() => DashBoardScreen());
               loading.value == false;
               if (kDebugMode) {

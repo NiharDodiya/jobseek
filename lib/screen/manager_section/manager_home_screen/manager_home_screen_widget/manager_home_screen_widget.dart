@@ -5,7 +5,7 @@ import 'package:jobseek/utils/app_style.dart';
 import 'package:jobseek/utils/asset_res.dart';
 import 'package:jobseek/utils/color_res.dart';
 
-Widget recentPeopleBox() {
+Widget recentPeopleBox({var args}) {
   return Container(
     padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 20),
     decoration: BoxDecoration(
@@ -38,14 +38,14 @@ Widget recentPeopleBox() {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      "Adam Smit",
+                      args["userName"],
                       style: appTextStyle(
                           color: ColorRes.black,
                           fontSize: 14,
                           fontWeight: FontWeight.w500),
                     ),
                     Text(
-                      "UI/UX Designer",
+                      args["Occupation"],
                       style: appTextStyle(
                           color: ColorRes.grey,
                           fontSize: 12,
@@ -126,7 +126,7 @@ Widget recentPeopleBox() {
               ),
             ),
             InkWell(
-              onTap: () => Get.toNamed(AppRes.seeDetailsScreen),
+              onTap: () => Get.toNamed(AppRes.seeDetailsScreen, arguments: args),
               child: Container(
                 width: 135,
                 height: 35,

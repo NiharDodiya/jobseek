@@ -220,7 +220,9 @@ class SignUpController extends GetxController {
           "Country": countryController.text,
         };
         await   PrefService.setValue(PrefKeys.firstnameu,firstnameController.text.toString());
-
+        await PrefService.setValue(PrefKeys.city, cityController.text.toString());
+        await PrefService.setValue(PrefKeys.state, stateController.text.toString());
+        await PrefService.setValue(PrefKeys.country, countryController.text.toString());
         addDataInFirebase(userUid: userCredential.user?.uid ?? "", map: map2);
       }
 

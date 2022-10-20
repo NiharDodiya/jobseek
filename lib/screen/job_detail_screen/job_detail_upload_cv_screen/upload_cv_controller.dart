@@ -6,30 +6,42 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
+import 'package:jobseek/service/pref_services.dart';
 import 'package:jobseek/utils/app_res.dart';
 import 'package:firebase_storage/firebase_storage.dart';
 
+import '../../../utils/pref_keys.dart';
+
 FirebaseFirestore firestore = FirebaseFirestore.instance;
+//List<String> position = [];
 
 class JobDetailsUploadCvController extends GetxController {
   onTapApply({var args}) {
+
+    //position.add(args["Position"]);
+    
+    //PrefService.setValue(PrefKeys.positionList, position);
+
     firestore
         .collection("Apply")
         .doc(FirebaseAuth.instance.currentUser!.uid)
         .set({
+      //'position': PrefService.getList(PrefKeys.positionList),
       'apply': true,
-      'position': [args["Position"]],
+      'userName': PrefService.getString(PrefKeys.fullName),
+      'email': PrefService.getString(PrefKeys.email),
+      'phone': PrefService.getString(PrefKeys.phoneNumber),
+      'city': PrefService.getString(PrefKeys.city),
+      'state': PrefService.getString(PrefKeys.state),
+      'country': PrefService.getString(PrefKeys.country),
+      'Occupation': PrefService.getString(PrefKeys.occupation),
       'uid': FirebaseAuth.instance.currentUser!.uid,
-      'user name': args["fullName"],
-      'email' : args["Email"],
-      'phone' : args["Phone"],
-      'city' : args["City"],
-      'state': args["State"],
-      'country': args["Country"],
     });
 
-    Get.toNamed(AppRes.jobDetailSuccessOrFailed, arguments: [
-      {"error": false, "filename": filepath}
+    Get.toNamed(AppRes.jobDetailSuccessOrFailed,
+        arguments: [
+      {"error": false, "filename": filepath},
+
     ]);
   }
 

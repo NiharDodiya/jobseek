@@ -230,7 +230,9 @@ class JobDetailsUploadCvScreen extends StatelessWidget {
                     // const Spacer(),
                     const SizedBox(height: 50),
                     GestureDetector(
-                      onTap: () => controller.onTapApply(args: args["doc"]),
+                      onTap: () {
+                        controller.onTapApply(args: args["doc"]);
+                      },
                       child: Obx(() {
                         return Container(
                           height: 50,

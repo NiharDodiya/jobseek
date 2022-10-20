@@ -8,8 +8,8 @@ import 'package:jobseek/utils/asset_res.dart';
 import 'package:jobseek/utils/color_res.dart';
 
 class SeeDetailsScreen extends StatelessWidget {
-  const SeeDetailsScreen({Key? key}) : super(key: key);
-
+   SeeDetailsScreen({Key? key}) : super(key: key);
+  var args = Get.arguments;
   @override
   Widget build(BuildContext context) {
     final controller = Get.put(SeeDetailsController());
@@ -164,10 +164,10 @@ class SeeDetailsScreen extends StatelessWidget {
                     commonTextFormField(
                       controller: controller.nameController,
                       color: ColorRes.containerColor,
-                      textDecoration: const InputDecoration(
-                          hintText: 'Viral Savaliya',
-                          hintStyle: TextStyle(color: Colors.black),
-                          contentPadding: EdgeInsets.all(15),
+                      textDecoration:  InputDecoration(
+                          hintText: args["userName"],
+                          hintStyle: const TextStyle(color: Colors.black),
+                          contentPadding: const EdgeInsets.all(15),
                           border: InputBorder.none),
                     ),
                     const SizedBox(
@@ -187,10 +187,10 @@ class SeeDetailsScreen extends StatelessWidget {
                     commonTextFormField(
                       controller: controller.emailController,
                       color: ColorRes.containerColor,
-                      textDecoration: const InputDecoration(
-                          hintText: 'example@yourdomain.com',
-                          hintStyle: TextStyle(color: Colors.black),
-                          contentPadding: EdgeInsets.all(15),
+                      textDecoration:  InputDecoration(
+                          hintText: args["email"],
+                          hintStyle: const TextStyle(color: Colors.black),
+                          contentPadding: const EdgeInsets.all(15),
                           border: InputBorder.none),
                     ),
                     const SizedBox(
@@ -222,7 +222,7 @@ class SeeDetailsScreen extends StatelessWidget {
                               keyboardType: TextInputType.number,
                               controller: controller.phoneNumberController,
                               decoration: InputDecoration(
-                                  hintText: '99135 01269',
+                                  hintText: args["phone"],
                                   fillColor: Colors.transparent,
                                   filled: true,
                                   hintStyle: appTextStyle(
@@ -252,10 +252,10 @@ class SeeDetailsScreen extends StatelessWidget {
                     commonTextFormField(
                       controller: controller.cityController,
                       color: ColorRes.containerColor,
-                      textDecoration: const InputDecoration(
-                          hintText: 'Surat',
-                          hintStyle: TextStyle(color: Colors.black),
-                          contentPadding: EdgeInsets.all(15),
+                      textDecoration:  InputDecoration(
+                          hintText: args["city"],
+                          hintStyle: const TextStyle(color: Colors.black),
+                          contentPadding: const EdgeInsets.all(15),
                           border: InputBorder.none),
                     ),
                     const SizedBox(
@@ -275,10 +275,10 @@ class SeeDetailsScreen extends StatelessWidget {
                     commonTextFormField(
                       controller: controller.stateController,
                       color: ColorRes.containerColor,
-                      textDecoration: const InputDecoration(
-                          hintText: 'Gujarat',
-                          hintStyle: TextStyle(color: ColorRes.black),
-                          contentPadding: EdgeInsets.all(15),
+                      textDecoration:  InputDecoration(
+                          hintText: args["state"],
+                          hintStyle: const TextStyle(color: ColorRes.black),
+                          contentPadding: const EdgeInsets.all(15),
                           border: InputBorder.none),
                     ),
                     const SizedBox(
@@ -298,10 +298,10 @@ class SeeDetailsScreen extends StatelessWidget {
                     commonTextFormField(
                       controller: controller.countryController,
                       color: ColorRes.containerColor,
-                      textDecoration: const InputDecoration(
-                          hintText: 'India',
-                          hintStyle: TextStyle(color: ColorRes.black),
-                          contentPadding: EdgeInsets.all(15),
+                      textDecoration:  InputDecoration(
+                          hintText: args["country"],
+                          hintStyle: const TextStyle(color: ColorRes.black),
+                          contentPadding: const EdgeInsets.all(15),
                           border: InputBorder.none),
                     ),
                     const SizedBox(height: 25),

@@ -11,6 +11,7 @@ import 'package:jobseek/utils/string.dart';
 
 // ignore: must_be_immutable
 class JobDetailsSuccessOrFailedScreen extends StatelessWidget {
+
   JobDetailsSuccessOrFailedScreen({Key? key}) : super(key: key);
   var args = Get.arguments;
   final JobDetailsUploadCvController controller =
