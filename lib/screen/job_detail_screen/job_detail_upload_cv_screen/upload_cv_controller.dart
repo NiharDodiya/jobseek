@@ -12,14 +12,20 @@ import 'package:firebase_storage/firebase_storage.dart';
 FirebaseFirestore firestore = FirebaseFirestore.instance;
 
 class JobDetailsUploadCvController extends GetxController {
-  onTapApply() {
+  onTapApply({var args}) {
     firestore
         .collection("Apply")
         .doc(FirebaseAuth.instance.currentUser!.uid)
         .set({
       'apply': true,
-      'position': "fdsf",
-      'uid': FirebaseAuth.instance.currentUser!.uid
+      'position': [args["Position"]],
+      'uid': FirebaseAuth.instance.currentUser!.uid,
+      'user name': args["fullName"],
+      'email' : args["Email"],
+      'phone' : args["Phone"],
+      'city' : args["City"],
+      'state': args["State"],
+      'country': args["Country"],
     });
 
     Get.toNamed(AppRes.jobDetailSuccessOrFailed, arguments: [

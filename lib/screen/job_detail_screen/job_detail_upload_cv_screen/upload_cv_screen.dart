@@ -11,6 +11,7 @@ class JobDetailsUploadCvScreen extends StatelessWidget {
   JobDetailsUploadCvScreen({Key? key}) : super(key: key);
   final JobDetailsUploadCvController controller =
       Get.put(JobDetailsUploadCvController());
+  var args = Get.arguments;
 
   @override
   Widget build(BuildContext context) {
@@ -49,12 +50,12 @@ class JobDetailsUploadCvScreen extends StatelessWidget {
                             mainAxisAlignment: MainAxisAlignment.center,
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              Text("UI/UX Designer",
+                              Text(args["doc"]["Position"],
                                   style: appTextStyle(
                                       color: ColorRes.black,
                                       fontSize: 15,
                                       fontWeight: FontWeight.w500)),
-                              Text("AirBNB",
+                              Text(args["doc"]["CompanyName"],
                                   style: appTextStyle(
                                       color: ColorRes.black,
                                       fontSize: 12,
@@ -229,7 +230,7 @@ class JobDetailsUploadCvScreen extends StatelessWidget {
                     // const Spacer(),
                     const SizedBox(height: 50),
                     GestureDetector(
-                      onTap: () => controller.onTapApply(),
+                      onTap: () => controller.onTapApply(args: args["doc"]),
                       child: Obx(() {
                         return Container(
                           height: 50,

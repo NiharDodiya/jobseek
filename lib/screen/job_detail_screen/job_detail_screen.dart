@@ -243,7 +243,6 @@ class JobDetailScreen extends StatelessWidget {
                   onTap: () {
                     Get.toNamed(AppRes.jobDetailUploadCvScreen,
                         arguments: {
-
                           "doc": args["doc"],
                         }
                     );
