@@ -83,7 +83,7 @@ class ManagerHomeScreen extends StatelessWidget {
                             fontSize: 20,
                             fontWeight: FontWeight.w600),
                       ),
-                      Text( 
+                      Text(
                         controller.companyNAme ?? "",
                         style: appTextStyle(
                             color: ColorRes.containerColor,
